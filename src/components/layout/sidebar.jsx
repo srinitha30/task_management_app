@@ -12,7 +12,7 @@ import {
   LogOut,
 } from "lucide-react";
 
-import "./Sidebar.css";
+import "./sidebar.css";
 
 function Sidebar({
   isOpen,

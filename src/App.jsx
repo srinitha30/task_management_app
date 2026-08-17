@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 
-import Sidebar from "./components/layout/Sidebar";
-import Dashboard from "./pages/Dashboard/Dashboard";
-import Calendar from "./pages/Calendar/Calendar";
-import Tasks from "./components/Tasks/Tasks";
-import Team from "./pages/Team/Team";
-import Analytics from "./pages/Analytics/Analytics";
-import Themes from "./pages/Themes/Themes";
-import Settings from "./pages/Settings/Settings";
+import Sidebar from "./components/layout/sidebar";
+import Dashboard from "./pages/dashboard/dashboard";
+import Calendar from "./pages/calendar/calendar";
+import Tasks from "./components/tasks/tasks";
+import Team from "./pages/team/team";
+import Analytics from "./pages/analytics/analytics";
+import Themes from "./pages/themes/themes";
+import Settings from "./pages/settings/settings";
 
-import Login from "./pages/Login/Login";
+import Login from "./pages/login/login";
 import Register from "./components/Register/Register";
 
 import "./App.css";

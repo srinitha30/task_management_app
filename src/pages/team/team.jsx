@@ -8,8 +8,7 @@ import {
 
 import "./Team.css";
 
-const API_URL =
-  "http://localhost:5000/api/auth/users";
+const API_URL ="https://task-management-app-as5p.onrender.com/api/auth/users";
 
 function Team() {
   const [users, setUsers] = useState([]);

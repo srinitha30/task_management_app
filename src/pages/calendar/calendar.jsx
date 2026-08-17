@@ -8,8 +8,7 @@ import {
 
 import "./Calendar.css";
 
-const API_URL = "http://localhost:5000/api/tasks";
-
+const API_URL = "https://task-management-app-as5p.onrender.com/api/tasks";
 function Calendar() {
   const [tasks, setTasks] = useState([]);
   const [selectedDate, setSelectedDate] = useState(

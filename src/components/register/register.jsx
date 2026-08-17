@@ -124,8 +124,8 @@ function Register({ onGoToLogin }) {
     try {
       setLoading(true);
 
-      const response = await fetch(
-        "http://localhost:5000/api/auth/register",
+      const response = await 
+        fetch("https://task-management-app-as5p.onrender.com/api/auth/register", 
         {
           method: "POST",
           headers: {
