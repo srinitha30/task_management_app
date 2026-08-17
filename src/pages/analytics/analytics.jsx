@@ -8,7 +8,7 @@ import {
   Target,
 } from "lucide-react";
 
-import "./Analytics.css";
+import "./analytics.css";
 
 const API_URL = "https://task-management-app-as5p.onrender.com/api/tasks";
 function Analytics() {

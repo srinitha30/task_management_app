@@ -11,7 +11,7 @@ import {
   Check,
 } from "lucide-react";
 
-import "./Register.css";
+import "./register.css";
 
 function Register({ onGoToLogin }) {
   const [form, setForm] = useState({

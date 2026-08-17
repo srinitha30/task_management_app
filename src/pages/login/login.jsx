@@ -9,7 +9,7 @@ import {
   UserPlus,
 } from "lucide-react";
 
-import "./Login.css";
+import "./login.css";
 
 function Login({ onLogin, onGoToRegister }) {
   const [form, setForm] = useState({

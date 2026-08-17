@@ -9,7 +9,7 @@ import {
   Pencil,
 } from "lucide-react";
 
-import "./Tasks.css";
+import "./tasks.css";
 
 const API_URL = "https://task-management-app-as5p.onrender.com/api/tasks";
 

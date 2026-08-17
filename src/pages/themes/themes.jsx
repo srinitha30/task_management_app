@@ -7,7 +7,7 @@ import {
   Sparkles,
 } from "lucide-react";
 
-import "./Themes.css";
+import "./themes.css";
 
 const themes = [
   {

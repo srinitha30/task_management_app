@@ -13,7 +13,7 @@ import {
   Target,
 } from "lucide-react";
 
-import "./Dashboard.css";
+import "./dashboard.css";
 
 const API_URL = "https://task-management-app-as5p.onrender.com/api/tasks";
 const emptyForm = {

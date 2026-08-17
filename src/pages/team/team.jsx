@@ -6,7 +6,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-import "./Team.css";
+import "./team.css";
 
 const API_URL ="https://task-management-app-as5p.onrender.com/api/auth/users";
 

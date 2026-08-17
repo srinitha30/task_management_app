@@ -6,7 +6,7 @@ import {
   Circle,
 } from "lucide-react";
 
-import "./Calendar.css";
+import "./calendar.css";
 
 const API_URL = "https://task-management-app-as5p.onrender.com/api/tasks";
 function Calendar() {

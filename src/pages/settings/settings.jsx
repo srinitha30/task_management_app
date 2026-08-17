@@ -7,7 +7,7 @@ import {
   Settings as SettingsIcon,
 } from "lucide-react";
 
-import "./Settings.css";
+import "./settings.css";
 
 function Settings() {
   const [user, setUser] = useState({
