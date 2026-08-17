@@ -10,7 +10,7 @@ import Themes from "./pages/themes/themes";
 import Settings from "./pages/settings/settings";
 
 import Login from "./pages/login/login";
-import Register from "./components/Register/Register";
+import Register from "./components/register/register";
 
 import "./App.css";
 
