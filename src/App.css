@@ -1,0 +1,900 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap");
+
+/* ========================================
+   GLOBAL RESET
+======================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #080b14;
+  color: #f8fafc;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+
+/* ========================================
+   APP
+======================================== */
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+
+  background: var(--app-bg, #080b14);
+  color: var(--text-main, #f8fafc);
+
+  transition:
+    background 0.35s ease,
+    color 0.35s ease;
+}
+
+
+/* ========================================
+   THEME SYSTEM
+======================================== */
+
+/* MIDNIGHT */
+
+.app.theme-midnight {
+  --app-bg: #080b14;
+  --panel-bg: rgba(255, 255, 255, 0.04);
+
+  --primary: #818cf8;
+  --primary-strong: #6366f1;
+
+  --text-main: #f8fafc;
+  --text-muted: #64748b;
+
+  background: #080b14;
+}
+
+
+/* AURORA */
+
+.app.theme-aurora {
+  --app-bg: #10091f;
+  --panel-bg: rgba(168, 85, 247, 0.06);
+
+  --primary: #c084fc;
+  --primary-strong: #a855f7;
+
+  --text-main: #faf5ff;
+  --text-muted: #a78bfa;
+
+  background:
+    radial-gradient(
+      circle at 70% 10%,
+      rgba(168, 85, 247, 0.18),
+      transparent 30%
+    ),
+    #10091f;
+}
+
+
+/* OCEAN */
+
+.app.theme-ocean {
+  --app-bg: #06141f;
+  --panel-bg: rgba(14, 165, 233, 0.06);
+
+  --primary: #38bdf8;
+  --primary-strong: #0284c7;
+
+  --text-main: #f0f9ff;
+  --text-muted: #7dd3fc;
+
+  background:
+    radial-gradient(
+      circle at 70% 10%,
+      rgba(14, 165, 233, 0.16),
+      transparent 30%
+    ),
+    #06141f;
+}
+
+
+/* SUNSET */
+
+.app.theme-sunset {
+  --app-bg: #1c0b07;
+  --panel-bg: rgba(249, 115, 22, 0.06);
+
+  --primary: #fb923c;
+  --primary-strong: #ea580c;
+
+  --text-main: #fff7ed;
+  --text-muted: #fdba74;
+
+  background:
+    radial-gradient(
+      circle at 70% 10%,
+      rgba(249, 115, 22, 0.18),
+      transparent 30%
+    ),
+    #1c0b07;
+}
+
+
+/* LIGHT */
+
+.app.theme-light {
+  --app-bg: #f1f5f9;
+  --panel-bg: rgba(255, 255, 255, 0.8);
+
+  --primary: #4f46e5;
+  --primary-strong: #4338ca;
+
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+
+  background: #f1f5f9;
+}
+
+
+/* ========================================
+   MAIN LAYOUT
+======================================== */
+
+.main-content {
+  width: calc(100% - 250px);
+  min-height: 100vh;
+  margin-left: 250px;
+
+  transition:
+    margin-left 0.3s ease,
+    width 0.3s ease;
+}
+
+
+/* ========================================
+   TOPBAR
+======================================== */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  width: 100%;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 30px;
+
+  background: rgba(8, 11, 20, 0.75);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.topbar-title {
+  color: var(--text-main, #f8fafc);
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.topbar-user {
+  margin-left: auto;
+}
+
+
+/* ========================================
+   MENU BUTTON
+======================================== */
+
+.menu-button {
+  display: none;
+
+  width: 40px;
+  height: 40px;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.05);
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.menu-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+
+/* ========================================
+   USER AVATAR
+======================================== */
+
+.user-avatar {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary, #6366f1),
+      #a855f7
+    );
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* ========================================
+   PAGE CONTENT
+======================================== */
+
+.page-content {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+}
+
+
+/* ========================================
+   PLACEHOLDER PAGES
+======================================== */
+
+.page-placeholder {
+  min-height: calc(100vh - 70px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px;
+
+  text-align: center;
+
+  color: var(--text-main, #f8fafc);
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(99, 102, 241, 0.12),
+      transparent 35%
+    );
+}
+
+.placeholder-icon {
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 20px;
+
+  border-radius: 20px;
+
+  background: rgba(99, 102, 241, 0.12);
+
+  font-size: 28px;
+}
+
+.page-placeholder h1 {
+  margin: 0;
+
+  color: var(--text-main, #f8fafc);
+
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.page-placeholder p {
+  max-width: 500px;
+
+  margin-top: 8px;
+
+  color: var(--text-muted, #64748b);
+
+  font-size: 13px;
+}
+
+
+/* ========================================
+   LIGHT THEME
+======================================== */
+
+.app.theme-light .topbar {
+  background: rgba(255, 255, 255, 0.82);
+  border-bottom-color: rgba(15, 23, 42, 0.08);
+}
+
+.app.theme-light .topbar-title {
+  color: #0f172a;
+}
+
+.app.theme-light .menu-button {
+  color: #334155;
+  background: rgba(15, 23, 42, 0.06);
+}
+
+.app.theme-light .page-placeholder {
+  color: #0f172a;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(99, 102, 241, 0.08),
+      transparent 35%
+    );
+}
+
+.app.theme-light .page-placeholder h1 {
+  color: #0f172a;
+}
+
+.app.theme-light .page-placeholder p {
+  color: #64748b;
+}
+
+
+/* ========================================
+   INNER PAGES
+======================================== */
+
+.inside-page {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 35px;
+}
+
+.page-eyebrow {
+  color: var(--primary, #818cf8);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.inside-page h1 {
+  margin: 8px 0;
+
+  color: var(--text-main, #f8fafc);
+
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.inside-page > p {
+  margin: 0 0 28px;
+
+  color: var(--text-muted, #64748b);
+}
+
+
+/* ========================================
+   INNER CARD
+======================================== */
+
+.inside-card {
+  padding: 30px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+
+  background: var(--panel-bg, rgba(255, 255, 255, 0.04));
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.15);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.inside-card:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(129, 140, 248, 0.3);
+}
+
+.inside-card h2 {
+  margin: 0 0 8px;
+
+  color: var(--text-main, #f8fafc);
+}
+
+.inside-card p {
+  color: var(--text-muted, #64748b);
+}
+
+.inside-card button {
+  margin-top: 20px;
+
+  padding: 12px 18px;
+
+  border: 0;
+  border-radius: 11px;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary-strong, #6366f1),
+      #8b5cf6
+    );
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.inside-card button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1024px) {
+
+  .main-content {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+
+  .menu-button {
+    display: flex;
+  }
+}
+
+
+/* ========================================
+   SMALL TABLET
+======================================== */
+
+@media (max-width: 768px) {
+
+  .topbar {
+    height: 64px;
+    padding: 0 20px;
+  }
+
+  .page-content {
+    min-height: calc(100vh - 64px);
+  }
+
+  .page-placeholder {
+    min-height: calc(100vh - 64px);
+    padding: 30px 20px;
+  }
+
+  .page-placeholder h1 {
+    font-size: 27px;
+  }
+
+  .inside-page {
+    padding: 28px 20px;
+  }
+
+  .inside-page h1 {
+    font-size: 30px;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+  .topbar {
+    padding: 0 15px;
+  }
+.topbar {
+  background: var(--topbar-bg);
+  border-bottom: 1px solid var(--app-border);
+  backdrop-filter: blur(18px);
+}
+  .topbar-title {
+    font-size: 14px;
+  }
+
+  .user-avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .page-placeholder {
+    padding: 25px 16px;
+  }
+
+  .page-placeholder h1 {
+    font-size: 24px;
+  }
+
+  .page-placeholder p {
+    font-size: 12px;
+  }
+
+  .inside-page {
+    padding: 22px 15px;
+  }
+
+  .inside-page h1 {
+    font-size: 28px;
+  }
+
+  .inside-card {
+    padding: 22px;
+    border-radius: 18px;
+  }
+}
+
+
+/* ========================================
+   VERY SMALL PHONE
+======================================== */
+
+@media (max-width: 400px) {
+
+  .topbar {
+    padding: 0 12px;
+  }
+
+  .menu-button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .topbar-title {
+    font-size: 13px;
+  }
+
+  .inside-page {
+    padding: 18px 12px;
+  }
+}
+/* =========================================
+   TASKFLOW THEME SYSTEM
+========================================= */
+
+.app {
+  min-height: 100vh;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+
+/* =========================================
+   MIDNIGHT
+========================================= */
+
+.app.theme-midnight {
+  --app-bg: #080a12;
+  --app-text: #f5f7ff;
+  --app-muted: rgba(255, 255, 255, 0.5);
+  --app-card: rgba(255, 255, 255, 0.045);
+  --app-border: rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================
+   LIGHT
+========================================= */
+
+.app.theme-light {
+  --app-bg: #f4f6fb;
+  --app-text: #151823;
+  --app-muted: rgba(21, 24, 35, 0.55);
+  --app-card: rgba(255, 255, 255, 0.85);
+  --app-border: rgba(20, 25, 40, 0.1);
+}
+
+
+/* =========================================
+   AURORA
+========================================= */
+
+.app.theme-aurora {
+  --app-bg: #07111f;
+  --app-text: #f5f7ff;
+  --app-muted: rgba(255, 255, 255, 0.55);
+  --app-card: rgba(70, 90, 180, 0.08);
+  --app-border: rgba(120, 150, 255, 0.15);
+}
+
+
+/* =========================================
+   MAIN BACKGROUND
+========================================= */
+
+.app {
+  background: var(--app-bg);
+  color: var(--app-text);
+}
+
+
+/* =========================================
+   LIGHT THEME OVERRIDES
+========================================= */
+
+.app.theme-light .topbar {
+  background: rgba(255, 255, 255, 0.75);
+  border-bottom-color: var(--app-border);
+}
+
+.app.theme-light .page-content {
+  color: var(--app-text);
+}
+
+.app.theme-light .menu-button {
+  color: #151823;
+}
+
+.app.theme-light .topbar-title {
+  color: #151823;
+}
+
+.app.theme-light .user-avatar {
+  background: rgba(0, 0, 0, 0.06);
+  color: #151823;
+}
+
+
+/* =========================================
+   AURORA BACKGROUND
+========================================= */
+
+.app.theme-aurora {
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(100, 80, 255, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(0, 200, 255, 0.08),
+      transparent 30%
+    ),
+    #07111f;
+}
+/* =========================================
+   OCEAN
+========================================= */
+
+.app.theme-ocean {
+  --app-bg: #061525;
+  --app-text: #eefaff;
+  --app-muted: rgba(220, 245, 255, 0.55);
+  --app-card: rgba(0, 150, 255, 0.06);
+  --app-border: rgba(0, 190, 255, 0.14);
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(0, 180, 255, 0.14),
+      transparent 30%
+    ),
+    #061525;
+}
+
+
+/* =========================================
+   EMERALD
+========================================= */
+
+.app.theme-emerald {
+  --app-bg: #061811;
+  --app-text: #effff7;
+  --app-muted: rgba(220, 255, 240, 0.55);
+  --app-card: rgba(0, 200, 120, 0.055);
+  --app-border: rgba(0, 220, 140, 0.13);
+
+  background:
+    radial-gradient(
+      circle at 20% 15%,
+      rgba(0, 220, 140, 0.13),
+      transparent 30%
+    ),
+    #061811;
+}
+
+
+/* =========================================
+   ROSE
+========================================= */
+
+.app.theme-rose {
+  --app-bg: #1b0b14;
+  --app-text: #fff2f7;
+  --app-muted: rgba(255, 225, 238, 0.55);
+  --app-card: rgba(255, 80, 150, 0.055);
+  --app-border: rgba(255, 100, 170, 0.14);
+
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(255, 70, 150, 0.15),
+      transparent 30%
+    ),
+    #1b0b14;
+}
+
+
+/* =========================================
+   SUNSET
+========================================= */
+
+.app.theme-sunset {
+  --app-bg: #1d1008;
+  --app-text: #fff7ef;
+  --app-muted: rgba(255, 230, 210, 0.55);
+  --app-card: rgba(255, 130, 40, 0.06);
+  --app-border: rgba(255, 150, 60, 0.15);
+
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(255, 120, 30, 0.16),
+      transparent 30%
+    ),
+    #1d1008;
+}
+
+
+/* =========================================
+   CYBER
+========================================= */
+
+.app.theme-cyber {
+  --app-bg: #050914;
+  --app-text: #efffff;
+  --app-muted: rgba(210, 255, 255, 0.55);
+  --app-card: rgba(80, 0, 255, 0.07);
+  --app-border: rgba(0, 255, 220, 0.16);
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(0, 255, 220, 0.1),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(150, 0, 255, 0.12),
+      transparent 30%
+    ),
+    #050914;
+}
+
+
+/* =========================================
+   VIOLET
+========================================= */
+
+.app.theme-violet {
+  --app-bg: #10091c;
+  --app-text: #faf4ff;
+  --app-muted: rgba(235, 215, 255, 0.55);
+  --app-card: rgba(150, 80, 255, 0.065);
+  --app-border: rgba(170, 100, 255, 0.15);
+
+  background:
+    radial-gradient(
+      circle at 20% 15%,
+      rgba(150, 70, 255, 0.16),
+      transparent 30%
+    ),
+    #10091c;
+}
+
+/* =========================================
+   SMOOTH TRANSITIONS
+========================================= */
+
+.app * {
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+/* ========================================
+   TOPBAR THEME VARIABLES
+======================================== */
+
+.app.theme-midnight {
+  --topbar-bg: rgba(11, 15, 26, 0.82);
+}
+
+.app.theme-light {
+  --topbar-bg: rgba(255, 255, 255, 0.88);
+}
+
+.app.theme-aurora {
+  --topbar-bg: rgba(16, 9, 31, 0.82);
+}
+
+.app.theme-ocean {
+  --topbar-bg: rgba(6, 20, 31, 0.84);
+}
+
+.app.theme-sunset {
+  --topbar-bg: rgba(28, 11, 7, 0.84);
+}
+
+.app.theme-emerald {
+  --topbar-bg: rgba(6, 24, 17, 0.84);
+}
+
+.app.theme-rose {
+  --topbar-bg: rgba(27, 11, 20, 0.84);
+}
+
+.app.theme-cyber {
+  --topbar-bg: rgba(5, 9, 20, 0.86);
+}
+
+.app.theme-violet {
+  --topbar-bg: rgba(16, 9, 28, 0.84);
+}

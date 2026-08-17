@@ -1,0 +1,782 @@
+/* =====================================================
+   TASKFLOW - TASKS PAGE
+   Matches Calendar UI
+===================================================== */
+
+.tasks-page {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+
+  padding: 34px 32px 50px;
+
+  color: #f8fafc;
+  font-family: "Poppins", "Inter", sans-serif;
+
+  background: #090d16;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.tasks-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  margin-bottom: 28px;
+}
+
+.tasks-label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #818cf8;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+}
+
+.tasks-header h1 {
+  margin: 0;
+
+  color: #f8fafc;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+
+  letter-spacing: -0.5px;
+}
+
+.tasks-header p {
+  margin: 7px 0 0;
+
+  color: #64748b;
+
+  font-size: 11px;
+  font-weight: 400;
+}
+
+
+/* =====================================================
+   NEW TASK BUTTON
+===================================================== */
+
+.new-task-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  height: 40px;
+
+  padding: 0 16px;
+
+  border: 1px solid rgba(129, 140, 248, 0.35);
+  border-radius: 10px;
+
+  outline: none;
+
+  color: #ffffff;
+
+  background: #4f46e5;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 20px rgba(79, 70, 229, 0.20);
+
+  transition: all 0.2s ease;
+}
+
+.new-task-btn:hover {
+  background: #6366f1;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 10px 25px rgba(79, 70, 229, 0.30);
+}
+
+
+/* =====================================================
+   TOOLBAR
+===================================================== */
+
+.task-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 14px;
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.search-box {
+  width: 350px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 0 13px;
+
+  border: 1px solid #202633;
+  border-radius: 10px;
+
+  background: #10141d;
+
+  color: #64748b;
+
+  transition: all 0.2s ease;
+}
+
+.search-box:focus-within {
+  border-color: #4f46e5;
+
+  box-shadow:
+    0 0 0 3px rgba(79, 70, 229, 0.08);
+}
+
+.search-box svg {
+  flex-shrink: 0;
+
+  color: #71809a;
+}
+
+.search-box input {
+  width: 100%;
+  height: 100%;
+
+  padding: 0;
+
+  border: none;
+  outline: none;
+
+  color: #e2e8f0;
+
+  background: transparent;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+}
+
+.search-box input::placeholder {
+  color: #64748b;
+
+  font-family: "Poppins", sans-serif;
+}
+
+
+/* =====================================================
+   TASK COUNT
+===================================================== */
+
+.task-count {
+  color: #94a3b8;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+
+/* =====================================================
+   TASK CONTAINER
+===================================================== */
+
+.tasks-container {
+  width: 100%;
+
+  overflow: hidden;
+
+  border: 1px solid #202633;
+  border-radius: 20px;
+
+  background: #10141d;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =====================================================
+   TASK CARD
+===================================================== */
+
+.task-card {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+
+  align-items: center;
+
+  min-height: 92px;
+
+  padding: 18px 22px;
+
+  border-bottom: 1px solid #202633;
+
+  background: #181d27;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.task-card:last-child {
+  border-bottom: none;
+}
+
+.task-card:hover {
+  background: #1b202c;
+}
+
+
+/* =====================================================
+   STATUS BUTTON
+===================================================== */
+
+.task-status-btn {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+  outline: none;
+
+  color: #64748b;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.task-status-btn:hover {
+  color: #8b5cf6;
+
+  transform: scale(1.08);
+}
+
+
+/* =====================================================
+   TASK CONTENT
+===================================================== */
+
+.task-card-content {
+  min-width: 0;
+
+  padding-left: 4px;
+}
+
+.task-card-content h3 {
+  margin: 0;
+
+  overflow: hidden;
+
+  color: #f1f5f9;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   TASK DETAILS
+===================================================== */
+
+.task-details {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 13px;
+
+  margin-top: 8px;
+}
+
+.task-details > span {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 4px;
+
+  color: #64748b;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 9px;
+  font-weight: 400;
+}
+
+.task-details svg {
+  width: 13px;
+  height: 13px;
+
+  color: #64748b;
+}
+
+
+/* =====================================================
+   PRIORITY
+===================================================== */
+
+.priority {
+  font-family: "Poppins", sans-serif !important;
+  font-size: 9px !important;
+  font-weight: 600 !important;
+}
+
+.priority.low {
+  color: #60a5fa !important;
+}
+
+.priority.medium {
+  color: #fca5a5 !important;
+}
+
+.priority.high {
+  color: #fca5a5 !important;
+}
+
+.priority.urgent {
+  color: #e879f9 !important;
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.task-status {
+  padding: 3px 8px;
+
+  border-radius: 20px;
+
+  color: #94a3b8 !important;
+
+  background: rgba(100, 116, 139, 0.10);
+
+  font-family: "Poppins", sans-serif !important;
+  font-size: 8px !important;
+  font-weight: 500 !important;
+}
+
+
+/* =====================================================
+   COMPLETED
+===================================================== */
+
+.completed-task {
+  color: #64748b !important;
+
+  text-decoration: line-through;
+}
+
+
+/* =====================================================
+   ACTIONS
+===================================================== */
+
+.task-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  opacity: 0;
+
+  transition: opacity 0.2s ease;
+}
+
+.task-card:hover .task-actions {
+  opacity: 1;
+}
+
+.task-actions button {
+  width: 31px;
+  height: 31px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid #29303d;
+  border-radius: 8px;
+
+  outline: none;
+
+  color: #7c8aa5;
+
+  background: #111620;
+
+  font-family: "Poppins", sans-serif;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.task-actions button:hover {
+  color: #a5b4fc;
+
+  border-color: #4f46e5;
+
+  background: rgba(79, 70, 229, 0.12);
+}
+
+.task-actions button:last-child:hover {
+  color: #f87171;
+
+  border-color: rgba(248, 113, 113, 0.35);
+
+  background: rgba(248, 113, 113, 0.08);
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.no-tasks {
+  padding: 70px 20px;
+
+  text-align: center;
+
+  background: #10141d;
+}
+
+.no-tasks svg {
+  color: #818cf8;
+}
+
+.no-tasks h2 {
+  margin: 14px 0 5px;
+
+  color: #f1f5f9;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.no-tasks p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.task-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 5000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(2, 6, 23, 0.72);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.task-modal {
+  width: min(440px, 100%);
+
+  padding: 25px;
+
+  border: 1px solid #29303d;
+  border-radius: 18px;
+
+  background: #111620;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.55);
+
+  font-family: "Poppins", sans-serif;
+}
+
+
+/* =====================================================
+   MODAL HEADER
+===================================================== */
+
+.modal-title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin-bottom: 22px;
+}
+
+.modal-title span {
+  color: #818cf8;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.modal-title h2 {
+  margin: 4px 0 0;
+
+  color: #f8fafc;
+
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.modal-title button {
+  width: 32px;
+  height: 32px;
+
+  border: 1px solid #29303d;
+  border-radius: 8px;
+
+  color: #94a3b8;
+
+  background: #181d27;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   MODAL FORM
+===================================================== */
+
+.task-modal form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+.task-modal label {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  color: #cbd5e1;
+
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.task-modal input,
+.task-modal select {
+  width: 100%;
+  height: 40px;
+
+  padding: 0 12px;
+
+  border: 1px solid #29303d;
+  border-radius: 9px;
+
+  outline: none;
+
+  color: #e2e8f0;
+
+  background: #181d27;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+}
+
+.task-modal input:focus,
+.task-modal select:focus {
+  border-color: #4f46e5;
+
+  box-shadow:
+    0 0 0 3px rgba(79, 70, 229, 0.08);
+}
+
+.task-modal input::placeholder {
+  color: #64748b;
+
+  font-family: "Poppins", sans-serif;
+}
+
+
+/* =====================================================
+   MODAL BUTTONS
+===================================================== */
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 8px;
+
+  margin-top: 7px;
+}
+
+.modal-buttons button {
+  height: 38px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  padding: 0 14px;
+
+  border-radius: 9px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.modal-buttons button:first-child {
+  border: 1px solid #29303d;
+
+  color: #94a3b8;
+
+  background: #181d27;
+}
+
+.modal-buttons button:last-child {
+  border: 1px solid #5b52ee;
+
+  color: white;
+
+  background: #4f46e5;
+}
+
+.modal-buttons button:hover {
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .tasks-page {
+    padding: 28px 24px 45px;
+  }
+}
+
+
+@media (max-width: 650px) {
+
+  .tasks-page {
+    padding: 24px 16px 40px;
+  }
+
+  .tasks-header {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 18px;
+  }
+
+  .new-task-btn {
+    width: 100%;
+  }
+
+  .task-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .task-card {
+    grid-template-columns: 34px minmax(0, 1fr);
+
+    padding: 16px;
+  }
+
+  .task-actions {
+    grid-column: 2;
+
+    opacity: 1;
+  }
+}
+
+
+@media (max-width: 420px) {
+
+  .tasks-header h1 {
+    font-size: 26px;
+  }
+
+  .task-card-content h3 {
+    font-size: 11px;
+  }
+
+  .task-details {
+    gap: 8px;
+  }
+
+  .task-modal {
+    padding: 20px;
+  }
+
+  .modal-buttons {
+    flex-direction: column-reverse;
+  }
+
+  .modal-buttons button {
+    width: 100%;
+  }
+}

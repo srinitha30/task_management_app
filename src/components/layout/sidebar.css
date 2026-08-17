@@ -1,0 +1,671 @@
+/* ========================================
+   SIDEBAR
+======================================== */
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 22px 16px;
+
+  background: var(--sidebar-bg, #0b0f1a);
+  color: var(--sidebar-text, #ffffff);
+
+  border-right: 1px solid
+    var(--sidebar-border, rgba(255, 255, 255, 0.06));
+
+  z-index: 1000;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 32px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: inherit;
+
+  cursor: pointer;
+}
+
+.brand-icon {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary, #6366f1),
+      #a855f7
+    );
+
+  box-shadow:
+    0 8px 25px
+    rgba(99, 102, 241, 0.3);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.brand-text strong {
+  color: var(--sidebar-heading, #f8fafc);
+
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.brand-text span {
+  margin-top: 2px;
+
+  color: var(--sidebar-muted, #64748b);
+
+  font-size: 9px;
+  font-weight: 500;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+
+/* ========================================
+   CLOSE BUTTON
+======================================== */
+
+.close-sidebar {
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 5px;
+
+  border: none;
+  background: transparent;
+
+  color: var(--sidebar-muted, #94a3b8);
+
+  cursor: pointer;
+}
+
+
+/* ========================================
+   NAVIGATION
+======================================== */
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  flex: 1;
+
+  overflow-y: auto;
+
+  scrollbar-width: none;
+}
+
+.sidebar-nav::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* ========================================
+   SECTION LABEL
+======================================== */
+
+.menu-label {
+  margin: 0 10px 10px;
+
+  color: var(--sidebar-muted, #64748b);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+.settings-label {
+  margin-top: 28px;
+  margin-bottom: 10px;
+}
+
+
+/* ========================================
+   NAV ITEM
+======================================== */
+
+.nav-item {
+  width: 100%;
+
+  min-height: 44px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 11px 12px;
+
+  border: 1px solid transparent;
+  border-radius: 11px;
+
+  outline: none;
+
+  background: transparent;
+
+  color: var(--sidebar-muted, #94a3b8);
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.nav-item:hover {
+  color: var(--sidebar-heading, #ffffff);
+
+  background: var(--sidebar-hover, #171d2b);
+
+  transform: translateX(3px);
+}
+
+
+/* ========================================
+   ICON
+======================================== */
+
+.nav-icon {
+  width: 20px;
+  height: 20px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ========================================
+   TEXT
+======================================== */
+
+.nav-text {
+  flex: 1;
+
+  white-space: nowrap;
+}
+
+
+/* ========================================
+   ARROW
+======================================== */
+
+.nav-arrow {
+  opacity: 0;
+
+  transform: translateX(-5px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.nav-item:hover .nav-arrow {
+  opacity: 0.7;
+
+  transform: translateX(0);
+}
+
+
+/* ========================================
+   ACTIVE ITEM
+======================================== */
+
+.nav-item.nav-active {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary, #6366f1),
+      var(--primary-strong, #8b5cf6)
+    );
+
+  border-color:
+    var(--primary, #6366f1);
+
+  box-shadow:
+    0 8px 25px
+    rgba(99, 102, 241, 0.25);
+
+  transform: none;
+}
+
+.nav-item.nav-active .nav-arrow {
+  opacity: 1;
+
+  transform: translateX(0);
+}
+
+
+/* ========================================
+   SIDEBAR BOTTOM
+======================================== */
+
+.sidebar-bottom {
+  flex-shrink: 0;
+
+  margin-top: 20px;
+}
+
+
+/* ========================================
+   USER
+======================================== */
+
+.sidebar-user {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 13px 4px;
+
+  border-top: 1px solid
+    var(--sidebar-border,
+    rgba(255, 255, 255, 0.06));
+}
+
+.sidebar-avatar {
+  width: 36px;
+  height: 36px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary, #6366f1),
+      #a855f7
+    );
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.sidebar-user-info {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+.sidebar-user-info strong {
+  color: var(--sidebar-heading, #f8fafc);
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.sidebar-user-info span {
+  margin-top: 3px;
+
+  color: var(--sidebar-muted, #64748b);
+
+  font-size: 8px;
+}
+
+
+/* ========================================
+   LOGOUT
+======================================== */
+
+.logout-button {
+  width: 100%;
+
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 10px 12px;
+
+  border: 1px solid
+    rgba(239, 68, 68, 0.08);
+
+  border-radius: 11px;
+
+  background:
+    rgba(239, 68, 68, 0.035);
+
+  color: #94a3b8;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.logout-button:hover {
+  color: #fca5a5;
+
+  background:
+    rgba(239, 68, 68, 0.09);
+
+  border-color:
+    rgba(239, 68, 68, 0.18);
+
+  transform: translateX(2px);
+}
+
+.logout-button .nav-icon {
+  color: #f87171;
+}
+
+.logout-button .nav-text {
+  flex: 1;
+
+  text-align: left;
+}
+
+.logout-button .nav-arrow {
+  opacity: 0.5;
+}
+
+
+/* ========================================
+   MIDNIGHT
+======================================== */
+
+.app.theme-midnight {
+  --sidebar-bg: #0b0f1a;
+  --sidebar-hover: #171d2b;
+
+  --sidebar-heading: #f8fafc;
+  --sidebar-muted: #64748b;
+
+  --sidebar-border:
+    rgba(255, 255, 255, 0.06);
+
+  --primary: #6366f1;
+  --primary-strong: #8b5cf6;
+}
+
+
+/* ========================================
+   AURORA
+======================================== */
+
+.app.theme-aurora {
+  --sidebar-bg: #10091f;
+  --sidebar-hover: #24143d;
+
+  --sidebar-heading: #faf5ff;
+  --sidebar-muted: #a78bfa;
+
+  --sidebar-border:
+    rgba(192, 132, 252, 0.12);
+
+  --primary: #a855f7;
+  --primary-strong: #c084fc;
+}
+
+
+/* ========================================
+   OCEAN
+======================================== */
+
+.app.theme-ocean {
+  --sidebar-bg: #06141f;
+  --sidebar-hover: #0c283b;
+
+  --sidebar-heading: #f0f9ff;
+  --sidebar-muted: #7dd3fc;
+
+  --sidebar-border:
+    rgba(56, 189, 248, 0.12);
+
+  --primary: #0284c7;
+  --primary-strong: #38bdf8;
+}
+
+
+/* ========================================
+   SUNSET
+======================================== */
+
+.app.theme-sunset {
+  --sidebar-bg: #1c0b07;
+  --sidebar-hover: #35150c;
+
+  --sidebar-heading: #fff7ed;
+  --sidebar-muted: #fdba74;
+
+  --sidebar-border:
+    rgba(251, 146, 60, 0.12);
+
+  --primary: #ea580c;
+  --primary-strong: #fb923c;
+}
+
+
+/* ========================================
+   LIGHT
+======================================== */
+
+.app.theme-light {
+  --sidebar-bg: #ffffff;
+  --sidebar-hover: #f1f5f9;
+
+  --sidebar-heading: #0f172a;
+  --sidebar-muted: #64748b;
+
+  --sidebar-border:
+    rgba(15, 23, 42, 0.08);
+
+  --primary: #4f46e5;
+  --primary-strong: #6366f1;
+}
+/* ========================================
+   EMERALD
+======================================== */
+
+.app.theme-emerald {
+  --sidebar-bg: #061811;
+  --sidebar-hover: #0d2b1e;
+
+  --sidebar-heading: #ecfdf5;
+  --sidebar-muted: #6ee7b7;
+
+  --sidebar-border:
+    rgba(52, 211, 153, 0.14);
+
+  --primary: #059669;
+  --primary-strong: #34d399;
+}
+
+
+/* ========================================
+   ROSE
+======================================== */
+
+.app.theme-rose {
+  --sidebar-bg: #1b0b14;
+  --sidebar-hover: #351323;
+
+  --sidebar-heading: #fff1f2;
+  --sidebar-muted: #f9a8d4;
+
+  --sidebar-border:
+    rgba(244, 114, 182, 0.14);
+
+  --primary: #db2777;
+  --primary-strong: #f472b6;
+}
+
+
+/* ========================================
+   CYBER
+======================================== */
+
+.app.theme-cyber {
+  --sidebar-bg: #050914;
+  --sidebar-hover: #101a2c;
+
+  --sidebar-heading: #ecfeff;
+  --sidebar-muted: #67e8f9;
+
+  --sidebar-border:
+    rgba(34, 211, 238, 0.16);
+
+  --primary: #06b6d4;
+  --primary-strong: #8b5cf6;
+}
+
+
+/* ========================================
+   VIOLET
+======================================== */
+
+.app.theme-violet {
+  --sidebar-bg: #10091c;
+  --sidebar-hover: #24143b;
+
+  --sidebar-heading: #faf5ff;
+  --sidebar-muted: #c4b5fd;
+
+  --sidebar-border:
+    rgba(167, 139, 250, 0.15);
+
+  --primary: #7c3aed;
+  --primary-strong: #a78bfa;
+}
+
+
+/* ========================================
+   MOBILE OVERLAY
+======================================== */
+
+.sidebar-overlay {
+  display: none;
+}
+
+
+/* ========================================
+   TABLET / MOBILE
+======================================== */
+
+@media (max-width: 1024px) {
+
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+
+  .close-sidebar {
+    display: flex;
+  }
+
+  .sidebar-overlay {
+    display: block;
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+      rgba(0, 0, 0, 0.55);
+
+    backdrop-filter: blur(4px);
+
+    z-index: 999;
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+  .sidebar {
+    width: 245px;
+  }
+}

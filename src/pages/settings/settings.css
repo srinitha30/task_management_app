@@ -1,0 +1,218 @@
+.settings-page {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 30px;
+  color: #f5f7ff;
+}
+
+.settings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.settings-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  opacity: 0.5;
+}
+
+.settings-header h1 {
+  margin: 7px 0;
+  font-size: 34px;
+}
+
+.settings-header p {
+  margin: 0;
+  color: rgba(255,255,255,0.5);
+  font-size: 14px;
+}
+
+.settings-icon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.settings-card {
+  margin-bottom: 20px;
+  padding: 25px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.045);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(18px);
+}
+
+.settings-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.settings-card-header span {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  opacity: 0.45;
+}
+
+.settings-card-header h2 {
+  margin: 6px 0;
+  font-size: 19px;
+}
+
+.settings-card-header p {
+  margin: 0;
+  color: rgba(255,255,255,0.45);
+  font-size: 13px;
+}
+
+.profile-avatar {
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: rgba(124,92,255,0.18);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.settings-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.65);
+}
+
+.settings-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 14px;
+  border-radius: 13px;
+  background: rgba(255,255,255,0.045);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.settings-input svg {
+  opacity: 0.45;
+}
+
+.settings-input input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  font-size: 14px;
+}
+
+.settings-input input:disabled {
+  opacity: 0.45;
+}
+
+.settings-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 5px;
+}
+
+.settings-actions button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 17px;
+  border: none;
+  border-radius: 11px;
+  background: white;
+  color: #111;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.settings-success {
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(60,220,130,0.1);
+  color: #75e8a5;
+  font-size: 13px;
+}
+
+.security-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13px;
+  background: rgba(255,255,255,0.06);
+}
+
+.security-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.035);
+}
+
+.security-row strong {
+  font-size: 14px;
+}
+
+.security-row p {
+  margin: 5px 0 0;
+  color: rgba(255,255,255,0.4);
+  font-size: 12px;
+}
+
+.security-badge {
+  padding: 7px 11px;
+  border-radius: 20px;
+  background: rgba(60,220,130,0.1);
+  color: #75e8a5;
+  font-size: 11px;
+}
+
+.settings-loading {
+  padding: 40px;
+  color: rgba(255,255,255,0.6);
+}
+
+@media (max-width: 650px) {
+  .settings-page {
+    padding: 20px 15px;
+  }
+
+  .settings-header h1 {
+    font-size: 28px;
+  }
+
+  .settings-card-header {
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .security-row {
+    align-items: flex-start;
+    gap: 15px;
+  }
+}
